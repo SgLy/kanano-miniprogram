@@ -1,0 +1,21 @@
+{
+  "name": "kanano-miniprogram",
+  "version": "1.0.0",
+  "description": "wechat miniprogram as a kana annotator and memo",
+  "main": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sgly/kanano-miniprogram.git"
+  },
+  "keywords": [],
+  "author": "SgLy",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/sgly/kanano-miniprogram/issues"
+  },
+  "homepage": "https://github.com/sgly/kanano-miniprogram#readme",
+  "devDependencies": {
+    "lz-string": "^1.4.4"
+  }
+}
