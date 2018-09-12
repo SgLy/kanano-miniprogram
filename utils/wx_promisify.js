@@ -12,8 +12,6 @@ const wx_p = (() => {
   return ret;
 })();
 
-console.log(wx, wx_p)
-
 module.exports = {
   wxSync: wx,
   wx: wx_p
