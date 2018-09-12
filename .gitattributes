@@ -1,0 +1,5 @@
+# Wechat Miniprogram WXML
+*.wxml linguist-language=HTML
+
+# Wechat Miniprogram WXSS
+*.wxss linguist-language=CSS
