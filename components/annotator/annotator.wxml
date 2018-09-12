@@ -1,0 +1,11 @@
+<view class="annotator {{ vertical ? 'vertical' : '' }}">
+  <view class="container">
+    <view class="word"
+      wx:for="{{ parsedText }}"
+      wx:key="{{ idx+item.upper+item.lower }}"
+    >
+      <text class="upper">{{ item.pronunciation }}</text>
+      <text class="lower">{{ item.surface_form }}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+.annotator {
+  font-size: 1em;
+}
+/* normal (horizontal case) */
+.annotator > .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1em;
+}
+.annotator > .container > .word {
+  display: inline-flex;
+  text-align: center;
+  flex-direction: column;
+}
+.annotator > .container > .word > .upper::before {
+  /* use zero width char to give empty upper a height */
+  content: '\200b';
+}
+.annotator > .container > .word > .upper {
+  font-size: 0.8em;
+  color: #888;
+}
+.annotator > .container > .word > .lower {
+  font-size: 1em;
+  display: inline;
+}
+
+/* vertical case */
+.annotator.vertical > .container {
+  writing-mode: vertical-rl;
+}
