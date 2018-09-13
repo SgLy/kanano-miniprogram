@@ -3,7 +3,12 @@ Component({
     height: {
       type: Number,
       value: 64,
-      observer: function(height) { this.setData({ height }); }
+      observer: function (height) { this.setData({ height }); }
+    },
+    atTop: {
+      type: Boolean,
+      value: true,
+      observer: function (atTop) { this.setData({ atTop }); }
     }
   }
 });

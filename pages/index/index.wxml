@@ -1,4 +1,7 @@
-<search-box height="{{ navigationBarHeight }}"/>
-<annotator
-  parsedText="{{ parsed }}"
+<search-box
+  height="{{ navigationBarHeight }}"
+  atTop="{{ atTop }}"
 />
+<view style="margin-top: {{ navigationBarHeight }}px" >
+  <annotator parsedText="{{ parsed }}" />
+</view> 

@@ -1,8 +1,8 @@
 const observerFactory = prop => {
-  return function(value) {
+  return function (value) {
     this.setData({ [prop]: value });
   };
-}
+};
 
 Component({
   properties: {
