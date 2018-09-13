@@ -1,3 +1,4 @@
+<search-box height="{{ navigationBarHeight }}"/>
 <annotator
   parsedText="{{ parsed }}"
 />

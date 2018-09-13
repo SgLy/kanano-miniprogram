@@ -1,4 +1,6 @@
+const app = getApp();
 const api = require('../../utils/api');
+const { wx } = require('../../utils/wx_promisify');
 
 Page({
   data: {
@@ -9,7 +11,8 @@ Page({
     api.parse(this.data.text).then(res => {
       this.setData({
         parsed: res.data.res
-      })
+      });
     });
+    this.setData({ navigationBarHeight: app.navigationBarHeight });
   }
 });
