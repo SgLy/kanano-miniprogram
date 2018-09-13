@@ -32,6 +32,7 @@
     "wx": true,
     "Page": true,
     "Component": true,
-    "App": true
+    "App": true,
+    "getApp": true
   }
 }
