@@ -2,13 +2,11 @@ Component({
   properties: {
     height: {
       type: Number,
-      value: 64,
-      observer: function (height) { this.setData({ height }); }
+      value: 64
     },
     atTop: {
       type: Boolean,
-      value: true,
-      observer: function (atTop) { this.setData({ atTop }); }
+      value: true
     }
   }
 });

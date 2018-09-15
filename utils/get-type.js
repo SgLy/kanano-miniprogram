@@ -1,0 +1,1 @@
+module.exports = p => Object.prototype.toString.apply(p).match(/\[object ([A-Za-z]+)\]/)[1];

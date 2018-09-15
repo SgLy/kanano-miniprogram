@@ -2,6 +2,13 @@
   height="{{ navigationBarHeight }}"
   atTop="{{ atTop }}"
 />
-<view style="margin-top: {{ navigationBarHeight }}px" >
-  <annotator parsedText="{{ parsed }}" />
-</view> 
+<view style="padding-top: {{ navigationBarHeight }}px" >
+  <!--<annotator parsedText="{{ parsed }}" />-->
+  <card
+    wx:for="{{ cards }}"
+    wx:forindex="index"
+    wx:key="{{ index }}"
+    createdTime="{{ item.createdTime }}"
+    text="{{ item.text }}"
+  ></card>
+</view>

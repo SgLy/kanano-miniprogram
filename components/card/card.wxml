@@ -1,0 +1,4 @@
+<view class="card">
+  <view class="content">{{ text }}</view>
+  <view class="sub">{{ createdTime }}</view>
+</view>
