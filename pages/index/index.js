@@ -3,23 +3,50 @@ const api = require('../../utils/api');
 const { formatDatetime } = require('../../utils/datetime');
 const { wx } = require('../../utils/wx_promisify');
 
+const TABS = {
+  CARD_LIST: 1,
+  TEXT: 2,
+  SETTING: 3
+};
+
 Page({
   data: {
-    text: '勝利のときは来た！この俺はあらゆる陰謀に屈せず、己の信念を貫き、ついに最終決戦を戦い抜いたのだ！この勝利のため、我が手足となって戦ってくれた仲間たちに感謝を！訪れるのは、俺が望んだ世界なり！全ては運命石の扉の選択である！',
+    text: '',
     parsed: [],
     atTop: true,
-    cards: []
+    cards: [],
+    TABS, tabs: TABS.CARD_LIST,
   },
   onLoad: function () {
     // set navigation bar height
     this.setData({ navigationBarHeight: app.navigationBarHeight });
 
-    // mock text
-    api.parse(this.data.text).then(res => {
-      this.setData({
-        parsed: res.data.res
+    // try to read clipboard
+    if (wx.getClipboardData !== undefined) {
+      wx.getClipboardData().then(res => {
+        if (res.data && res.data.length > 0) {
+          const text = res.data, len = text.length;
+          const short = text.slice(0, 17) + (len > 17 ? '...' : '');
+          wx.showModal({
+            title: '从剪贴板导入',
+            content: `共「${short}」${len}字`,
+            cancelText: '不导入',
+            confirmText: '查看'
+          }).then(res => {
+            if (!res.confirm)
+              return;
+
+            // parse text
+            api.parse(text).then(res => {
+              this.setData({
+                tabs: TABS.TEXT,
+                parsed: res.data.res
+              });
+            });
+          });
+        }
       });
-    });
+    }
 
     // mock cards
     this.setData({

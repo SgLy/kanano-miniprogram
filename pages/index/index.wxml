@@ -5,10 +5,15 @@
 <view style="padding-top: {{ navigationBarHeight }}px" >
   <!-- <sortableList /> -->
   <card
+    wx:if="{{ tabs === TABS.CARD_LIST }}"
     wx:for="{{ cards }}"
     wx:forindex="index"
     wx:key="{{ index }}"
     createdTime="{{ item.createdTime }}"
     text="{{ item.text }}"
   ></card>
+  <annotator
+    wx:if="{{ tabs === TABS.TEXT }}"
+    parsedText="{{ parsed }}"
+  />
 </view>
