@@ -1,0 +1,25 @@
+.outer-container {
+  padding: 0.5em;
+}
+.container {
+  box-sizing: border-box;
+  transition: opacity 0.2s ease;
+}
+.container.transparent {
+  opacity: 0.5;
+}
+.item {
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+}
+.content {
+  flex: 1;
+}
+.handler {
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+}

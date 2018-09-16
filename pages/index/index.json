@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "annotator": "../../components/annotator/annotator",
-    "search-box": "../../components/search-box/search-box",
-    "card": "../../components/card/card"
+    "searchBox": "../../components/search-box/search-box",
+    "card": "../../components/card/card",
+    "sortableList": "../../components/sortable-list/sortable-list"
   }
 }

@@ -1,9 +1,9 @@
-<search-box
+<searchBox
   height="{{ navigationBarHeight }}"
   atTop="{{ atTop }}"
 />
 <view style="padding-top: {{ navigationBarHeight }}px" >
-  <!--<annotator parsedText="{{ parsed }}" />-->
+  <!-- <sortableList /> -->
   <card
     wx:for="{{ cards }}"
     wx:forindex="index"

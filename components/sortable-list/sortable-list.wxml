@@ -1,0 +1,28 @@
+<view class="outer-container">
+  <view
+    class="container {{ movingIndex === index ? 'transparent' : '' }} {{ moving ? 'moving' : '' }}"
+    wx:for="{{ list }}"
+    wx:forindex="index"
+    wx:key="{{ index }}"
+    data-index="{{ index }}"
+  >
+    <view
+      class="item {{ movingIndex === index ? '' : 'not-dragging-item' }}"
+      style="{{ moving ? 'position: absolute; height: ' + positions[index].height + 'px; width: ' + positions[index].width + 'px; top: ' + (movingIndex === index ? currentTop : tops[index]) + 'px; left: ' + positions[index].left + 'px;' : '' }}"
+      data-index="{{ index }}"
+    >
+      <view class="content">{{ item.data }}</view>
+      <view class="handler"
+        data-index="{{ index }}"
+        bind:touchstart="onTouchStart"
+        bind:touchmove="onTouchMove"
+        bind:touchend="onTouchEnd"
+      />
+    </view>
+    <view
+      class="placeholder"
+      style="{{ moving ? 'height: ' + positions[index].height + 'px; width: ' + positions[index].width + 'px; top: ' + tops[index] + 'px; left: ' + positions[index].left + 'px;' : '' }}"
+      wx:if="{{ movingIndex === index }}"
+    />
+  </view>
+</view>
