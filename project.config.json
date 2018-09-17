@@ -1,0 +1,44 @@
+{
+	"miniprogramRoot": "miniprogram",
+	"packOptions": {
+		"ignore": [{
+			"value": "node_modules",
+			"type": "folder"
+		}, {
+			"value": ".eslintrc.json",
+			"type": "file"
+		}, {
+			"value": ".gitattributes",
+			"type": "file"
+		}, {
+			"value": ".gitignore",
+			"type": "file"
+		}, {
+			"value": "LICENSE",
+			"type": "file"
+		}, {
+			"value": "package-lock.json",
+			"type": "file"
+		}, {
+			"value": "package.json",
+			"type": "file"
+		}, {
+			"value": "README.md",
+			"type": "file"
+		}]
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false
+}
