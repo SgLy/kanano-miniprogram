@@ -6,4 +6,6 @@ Server: [kanano-server](https://github.com/SgLy/kanano-server)
 
 #### Run guide
 
-Open with miniprogram devtool, need no compilation.
+- Install dependency: `npm i -D`- 
+- Initialize vendor: `npm run init`
+- Open with miniprogram devtool

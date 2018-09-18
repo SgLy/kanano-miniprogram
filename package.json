@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "wechat miniprogram as a kana annotator and memo",
   "main": "",
-  "scripts": {},
+  "scripts": {
+    "init": "node init.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sgly/kanano-miniprogram.git"
