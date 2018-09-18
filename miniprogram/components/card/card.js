@@ -4,7 +4,7 @@ Component({
       type: String,
       value: (new Date()).toLocaleString()
     },
-    text: {
+    title: {
       type: String,
       value: ''
     }

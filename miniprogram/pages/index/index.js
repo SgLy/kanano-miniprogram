@@ -1,7 +1,9 @@
 const app = getApp();
 const api = require('../../utils/api');
+const noop = require('../../utils/noop');
 const { formatDatetime } = require('../../utils/datetime');
-const { wx } = require('../../utils/wx_promisify');
+const { parse, stringify } = require('../../utils/serialization');
+const { wx, wxSync } = require('../../utils/wx_promisify');
 
 const TABS = {
   CARD_LIST: 1,
@@ -11,51 +13,60 @@ const TABS = {
 
 Page({
   data: {
-    text: '',
-    parsed: [],
     atTop: true,
-    cards: [],
+    data: [],
     TABS, tabs: TABS.CARD_LIST,
   },
   onLoad: function () {
     // set navigation bar height
     this.setData({ navigationBarHeight: app.navigationBarHeight });
 
+    // read save data
+    const data = parse(wxSync.getStorageSync('data'));
+    data.forEach(d => d.createdTime = formatDatetime(d.createdTime));
+    this.setData({ data });
+
     // try to read clipboard
     if (wx.getClipboardData !== undefined) {
+      let text;
       wx.getClipboardData().then(res => {
         if (res.data && res.data.length > 0) {
-          const text = res.data, len = text.length;
+          text = res.data;
+          const len = text.length;
           const short = text.slice(0, 17) + (len > 17 ? '...' : '');
-          wx.showModal({
+          return wx.showModal({
             title: '从剪贴板导入',
             content: `共「${short}」${len}字`,
             cancelText: '不导入',
             confirmText: '查看'
-          }).then(res => {
-            if (!res.confirm)
-              return;
-
-            // parse text
-            api.parse(text).then(res => {
-              this.setData({
-                tabs: TABS.TEXT,
-                parsed: res.data.res
-              });
-            });
           });
         }
-      });
+      }).then(res => {
+        if (res.confirm === true)
+          return api.parse(text);
+        else
+          return Promise.reject('');
+      }).then(res => {
+        this.setData({
+          tabs: TABS.TEXT,
+          parsed: res.data.res
+        });
+        // save to storage
+        const data = this.data.data;
+        data.push({
+          title: text.slice(0, 5),
+          createdTime: Date.now(),
+          parsed: res.data.res
+        });
+        wxSync.setStorageSync('data', stringify(data));
+      }).catch(noop);
     }
-
-    // mock cards
+  },
+  onCardTap: function (e) {
+    const index = e.currentTarget.dataset.index;
     this.setData({
-      cards: Array(10).fill(0).map(() => {
-        return {
-          createdTime: formatDatetime(Date.now() - Math.random() * 1000000),
-          text: 'this is a hello world test'
-        };
-      })
+      tabs: TABS.TEXT,
+      parsed: this.data.data[index].parsed
     });
   },
   onPageScroll: function (e) {

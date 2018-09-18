@@ -6,11 +6,13 @@
   <!-- <sortableList /> -->
   <card
     wx:if="{{ tabs === TABS.CARD_LIST }}"
-    wx:for="{{ cards }}"
+    wx:for="{{ data }}"
     wx:forindex="index"
     wx:key="{{ index }}"
+    data-index="{{ index }}"
     createdTime="{{ item.createdTime }}"
-    text="{{ item.text }}"
+    title="{{ item.title }}"
+    catchtap="onCardTap"
   ></card>
   <annotator
     wx:if="{{ tabs === TABS.TEXT }}"
