@@ -19,6 +19,10 @@
 				"type": "file"
 			},
 			{
+				"value": "init.js",
+				"type": "file"
+			},
+			{
 				"value": "LICENSE",
 				"type": "file"
 			},
