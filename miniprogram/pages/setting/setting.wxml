@@ -1,4 +1,4 @@
-<searchBox
-  height="{{ navigationBarHeight }}"
-/>
+<searchBox />
+<view style="padding-top: {{ navigationBarHeight }}px" >
+</view>
 <tabBar />
