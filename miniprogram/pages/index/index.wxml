@@ -2,18 +2,14 @@
 <view style="padding-top: {{ navigationBarHeight }}px" >
   <!-- <sortableList /> -->
   <card
-    wx:if="{{ tabs === TABS.CARD_LIST }}"
-    wx:for="{{ data }}"
+    wx:for="{{ data.text }}"
     wx:forindex="index"
     wx:key="{{ index }}"
     data-index="{{ index }}"
-    createdTime="{{ item.shownCreatedTime }}"
-    title="{{ item.title }}"
     catchtap="onCardTap"
-  ></card>
-  <annotator
-    wx:if="{{ tabs === TABS.TEXT }}"
-    parsedText="{{ parsed }}"
-  />
+  >
+    <view class="title">{{ item.title }}</view>
+    <view class="content">{{ item.shownCreatedTime }}</view>
+  </card>
 </view>
 <tabBar />

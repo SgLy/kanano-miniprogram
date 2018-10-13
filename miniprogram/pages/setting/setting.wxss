@@ -1,0 +1,28 @@
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.nickname {
+  margin-left: 1em;
+}
+.option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.option-spacing {
+  flex: 1;
+}
+.option-label {
+  font-size: 0.8em;
+}
+.option-switch {
+  
+}

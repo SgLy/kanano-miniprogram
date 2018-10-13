@@ -7,11 +7,11 @@ const { p } = require('../base');
 
 Page(p({
   data: {
-    data: [],
+    data: {},
   },
   onLoad() {
     // try to read clipboard
-    if (false)
+    if (this.data.data.options.clipboard)
       this.getClipboard();
   },
   getClipboard() {
@@ -37,14 +37,14 @@ Page(p({
       }).then(res => {
         // save to storage
         const data = this.data.data;
-        data.push({
+        data.text.push({
           title: text.slice(0, 5),
           createdTime: Date.now(),
           shownCreatedTime: formatDatetime(Date.now()),
           parsed: res.data.res
         });
         saveData(data);
-        this.viewText(this.data.data.length - 1);
+        this.viewText(this.data.data.text.length - 1);
       }).catch(noop);
     }
   },

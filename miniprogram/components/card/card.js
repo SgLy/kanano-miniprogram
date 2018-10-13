@@ -1,10 +1,10 @@
 Component({
   properties: {
-    createdTime: {
-      type: String,
-      value: (new Date()).toLocaleString()
+    showLabel: {
+      type: Boolean,
+      value: false
     },
-    title: {
+    label: {
       type: String,
       value: ''
     }

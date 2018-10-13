@@ -12,7 +12,7 @@ function stringify(data) {
 
 function parse(compressed) {
   if (compressed.length === 0)
-    return [];
+    return {};
   const str = decompressFromEncodedURIComponent(compressed);
   return JSON.parse(str);
 }

@@ -1,4 +1,24 @@
 <searchBox />
-<view style="padding-top: {{ navigationBarHeight }}px">
+<view
+  style="padding-top: {{ navigationBarHeight }}px"
+  catchValueChanged="onValueChanged"
+>
+  <card>
+    <view class="info">
+      <view class="avatar">
+        <open-data type="userAvatarUrl" />
+      </view>
+      <open-data class="nickname" type="userNickName" />
+    </view>
+  </card>
+  <card showLabel label="Source">
+    <view class="option">
+      <view class="option-label">Check clipboard</view>
+      <view class="option-spacing"></view>
+      <view class="option-switcher">
+        <swticher initValue="{{ data.options.clipboard }}" name="clipboard" />
+      </view>
+    </view>
+  </card>
 </view>
 <tabBar />

@@ -1,0 +1,10 @@
+card {
+  margin: 0.8em;
+}
+card .title {}
+card .content {
+  font-size: 0.7em;
+  margin-top: 0.7em;
+  color: #222222;
+
+}

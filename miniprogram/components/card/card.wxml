@@ -1,4 +1,10 @@
-<view class="card">
-  <view class="content">{{ title }}</view>
-  <view class="sub">{{ createdTime }}</view>
+<text
+  wx-if="{{ showLabel }}"
+  class="card-label"
+>{{ label }}</text>
+<view
+  class="card"
+  style="{{ showLabel ? 'margin-top: 5px;' : '' }}"
+>
+  <slot></slot>
 </view>

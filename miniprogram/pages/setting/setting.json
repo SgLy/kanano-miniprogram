@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "tabBar": "../../components/tab-bar/tab-bar",
-    "searchBox": "../../components/search-box/search-box"
+    "searchBox": "../../components/search-box/search-box",
+    "card": "../../components/card/card",
+    "swticher": "../../components/switcher/switcher"
   }
 }

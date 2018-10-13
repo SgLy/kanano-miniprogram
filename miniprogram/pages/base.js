@@ -17,7 +17,9 @@ function wrapPageOption(options) {
   wrapFunction(options, 'onLoad', function () {
     // read save data
     const data = loadData();
-    data.forEach(d => d.showCreatedTime = formatDatetime(d.createdTime));
+    data.text = data.text || [];
+    data.options = data.options || {};
+    data.text.forEach(d => d.showCreatedTime = formatDatetime(d.createdTime));
 
     this.setData({
       data,

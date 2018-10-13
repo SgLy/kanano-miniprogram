@@ -6,10 +6,8 @@
   display: flex;
   flex-direction: column;
 }
-.card .content {}
-.card .sub {
-  font-size: 0.7em;
-  margin-top: 0.7em;
-  color: #222222;
-
+.card-label {
+  font-size: 0.9em;
+  margin-top: 1em;
+  margin-left: 1em;
 }
