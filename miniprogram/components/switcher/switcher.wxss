@@ -1,0 +1,42 @@
+.switcher {
+  background: none;
+  border: none;
+  padding: 0;
+  position: relative;
+  width: 34px;
+  z-index: 0;
+}
+.switcher.disabled {
+  opacity: 0.38;
+  pointer-events: none;
+}
+.switcher-dot {
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  display: block;
+  height: 16px;
+  position: relative;
+  transition: transform linear 80ms, background-color linear 80ms;
+  width: 16px;
+  z-index: 1;
+}
+.switcher-dot.checked {
+  background-color:rgb(26, 115, 232);
+  transform: translate3d(18px, 0, 0);
+}
+.switcher-track {
+  background-color: rgb(189, 193, 198);
+  border-radius: 8px;
+  height: 12px;
+  left: 3px;
+  position: absolute;
+  top: 2px;
+  transition: background-color linear 80ms;
+  width: 28px;
+  z-index: 0;
+}
+.switcher-track.checked {
+  background-color: rgb(26, 115, 232);
+  opacity: 0.5;
+}

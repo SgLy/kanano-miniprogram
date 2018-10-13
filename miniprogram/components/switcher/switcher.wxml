@@ -1,0 +1,4 @@
+<view class="switcher {{ disabled ? 'disabled' : '' }}" catchtap="onTap">
+  <view class="switcher-dot {{ checked ? 'checked' : '' }}" />
+  <view class="switcher-track  {{ checked ? 'checked' : '' }}" />
+</view>
