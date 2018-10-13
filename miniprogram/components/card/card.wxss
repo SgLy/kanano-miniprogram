@@ -2,7 +2,7 @@
   margin: 0.8em;
   padding: 1em;
   border-radius: 8px;
-  background-color: #f2f2f2;
+  background-color: rgb(240, 242, 243);
   display: flex;
   flex-direction: column;
 }
