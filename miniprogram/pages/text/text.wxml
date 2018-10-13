@@ -7,3 +7,4 @@
     parsedText="{{ parsed }}"
   />
 </view>
+<tabBar />

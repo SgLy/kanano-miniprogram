@@ -1,0 +1,15 @@
+<view class="tab-bar">
+  <view class="tabs-container">
+    <view
+      class="tab {{ index === currentTab ? 'active' : '' }}"
+      wx:for="{{ tabs }}"
+      wx:forindex="index"
+      wx:key="{{ index }}"
+      data-url="{{ item.url }}"
+      data-index="{{ index }}"
+      bindtap="onTabClick"
+    >
+      <text>{{ item.name }}</text>
+    </view>
+  </view>
+</view>

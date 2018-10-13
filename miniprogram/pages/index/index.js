@@ -1,25 +1,21 @@
-const app = getApp();
 const api = require('../../utils/api');
 const noop = require('../../utils/noop');
 const { formatDatetime } = require('../../utils/datetime');
-const { saveData, loadData } = require('../../utils/serialization');
-const { wx, wxSync } = require('../../utils/wx_promisify');
+const { saveData } = require('../../utils/serialization');
+const { wx } = require('../../utils/wx_promisify');
+const { p } = require('../base');
 
-Page({
+Page(p({
   data: {
     atTop: true,
     data: [],
   },
   onLoad() {
-    // set navigation bar height
-    this.setData({ navigationBarHeight: app.navigationBarHeight });
-
-    // read save data
-    const data = loadData();
-    data.forEach(d => d.showCreatedTime = formatDatetime(d.createdTime));
-    this.setData({ data });
-
     // try to read clipboard
+    if (false)
+      this.getClipboard();
+  },
+  getClipboard() {
     if (wx.getClipboardData !== undefined) {
       let text;
       wx.getClipboardData().then(res => {
@@ -61,10 +57,5 @@ Page({
     wx.navigateTo({
       url: `/pages/text/text?id=${id}`
     });
-  },
-  onPageScroll(e) {
-    const atTop = !(e.scrollTop > 0);
-    if (atTop !== this.data.atTop)
-      this.setData({ atTop });
   }
-});
+}));
