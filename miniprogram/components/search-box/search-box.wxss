@@ -10,3 +10,7 @@
 .container.container-top {
   box-shadow: 0 0 1px rgba(0,0,0,.28);
 }
+.this-will-be-on-top-of-page {
+  height: 1px;
+  opacity: 0;
+}

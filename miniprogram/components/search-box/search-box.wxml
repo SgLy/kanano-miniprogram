@@ -1,3 +1,4 @@
+<view class="this-will-be-on-top-of-page"></view>
 <view
   class="container {{ atTop ? 'container-top' : '' }}"
   style="height: {{ height }}px;">

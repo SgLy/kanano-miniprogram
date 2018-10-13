@@ -25,13 +25,6 @@ function wrapPageOption(options) {
     });
   });
 
-  wrapFunction(options, 'onPageScroll', function (e) {
-    this.scrollTop = e.scrollTop;
-    const atTop = !(e.scrollTop > 0);
-    if (atTop !== this.data.atTop)
-      this.setData({ atTop });
-  });
-
   wrapFunction(options, 'onReachBottom', function () {
     this.bottomScrollTop = Math.max(this.bottomScrollTop, this.scrollTop);
   });

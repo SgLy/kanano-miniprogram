@@ -1,31 +1,40 @@
 {
-	"miniprogramRoot": "miniprogram",
+	"miniprogramRoot": "miniprogram/",
 	"packOptions": {
-		"ignore": [{
-			"value": "node_modules",
-			"type": "folder"
-		}, {
-			"value": ".eslintrc.json",
-			"type": "file"
-		}, {
-			"value": ".gitattributes",
-			"type": "file"
-		}, {
-			"value": ".gitignore",
-			"type": "file"
-		}, {
-			"value": "LICENSE",
-			"type": "file"
-		}, {
-			"value": "package-lock.json",
-			"type": "file"
-		}, {
-			"value": "package.json",
-			"type": "file"
-		}, {
-			"value": "README.md",
-			"type": "file"
-		}]
+		"ignore": [
+			{
+				"value": "node_modules",
+				"type": "folder"
+			},
+			{
+				"value": ".eslintrc.json",
+				"type": "file"
+			},
+			{
+				"value": ".gitattributes",
+				"type": "file"
+			},
+			{
+				"value": ".gitignore",
+				"type": "file"
+			},
+			{
+				"value": "LICENSE",
+				"type": "file"
+			},
+			{
+				"value": "package-lock.json",
+				"type": "file"
+			},
+			{
+				"value": "package.json",
+				"type": "file"
+			},
+			{
+				"value": "README.md",
+				"type": "file"
+			}
+		]
 	},
 	"setting": {
 		"urlCheck": false,
@@ -40,5 +49,33 @@
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"isGameTourist": false
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "Setting",
+					"pathName": "pages/setting/setting",
+					"scene": "1001"
+				}
+			]
+		}
+	}
 }

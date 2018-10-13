@@ -1,6 +1,5 @@
 <searchBox
   height="{{ navigationBarHeight }}"
-  atTop="{{ atTop }}"
 />
 <view style="padding-top: {{ navigationBarHeight }}px" >
   <annotator

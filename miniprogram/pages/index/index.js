@@ -7,7 +7,6 @@ const { p } = require('../base');
 
 Page(p({
   data: {
-    atTop: true,
     data: [],
   },
   onLoad() {

@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/text/text"
+    "pages/text/text",
+    "pages/setting/setting"
   ],
   "window":{
     "navigationStyle": "custom"

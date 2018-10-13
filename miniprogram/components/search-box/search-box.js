@@ -3,10 +3,16 @@ Component({
     height: {
       type: Number,
       value: 64
-    },
-    atTop: {
-      type: Boolean,
-      value: true
     }
+  },
+  data: {
+    atTop: true
+  },
+  ready() {
+    let observer = this.createIntersectionObserver();
+    observer.relativeToViewport({ top: 0 });
+    observer.observe('.this-will-be-on-top-of-page', res => {
+      this.setData({ atTop: res.intersectionRatio < 1 });
+    });
   }
 });
