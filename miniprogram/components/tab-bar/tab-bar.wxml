@@ -1,5 +1,5 @@
 <view class="tab-bar">
-  <view class="tabs-container">
+  <view class="tabs-container {{ atBottom ? 'tabs-container-bottom' : '' }}">
     <view
       class="tab {{ index === currentTab ? 'active' : '' }}"
       wx:for="{{ tabs }}"
@@ -8,8 +8,10 @@
       data-url="{{ item.url }}"
       data-index="{{ index }}"
       bindtap="onTabClick"
+      wx:if="{{ !item.showOnlyMatched || index === currentTab }}"
     >
       <text>{{ item.name }}</text>
     </view>
   </view>
 </view>
+<view class="this-will-be-on-bottom-of-page" />

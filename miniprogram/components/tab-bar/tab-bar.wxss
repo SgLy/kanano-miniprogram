@@ -2,10 +2,14 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  box-shadow: 0 0 2px rgba(0,0,0,.14),
-              0 -2px 4px rgba(0,0,0,.28);
+}
+.tab-bar .tabs-container.tabs-container-bottom {
+  box-shadow: 0 0 1px rgba(0,0,0,.28);
 }
 .tab-bar .tabs-container {
+  box-shadow: 0 0 2px rgba(0,0,0,.14),
+              0 -2px 4px rgba(0,0,0,.28);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -18,4 +22,8 @@
 }
 .tab-bar .tab.active {
   color: rgb(25, 115, 230);
+}
+.this-will-be-on-bottom-of-page {
+  height: 1px;
+  opacity: 0;
 }

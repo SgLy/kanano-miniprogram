@@ -19,7 +19,9 @@ const TABS = [
 const currentRoute = require('../../utils/current-route');
 
 Component({
-  data: {},
+  data: {
+    atBottom: true
+  },
   attached() {
     let route = currentRoute();
     if (route[0] !== '/') {
@@ -27,8 +29,16 @@ Component({
     }
     const matched = TABS.findIndex(tab => route.search(tab.url) !== -1);
     this.setData({
-      tabs: TABS.filter((tab, index) => !tab.showOnlyMatched || index === matched),
+      tabs: TABS,
       currentTab: matched
+    });
+  },
+  ready() {
+    // observer to switch box-shadow
+    let observer = this.createIntersectionObserver();
+    observer.relativeToViewport({ bottom: 0 });
+    observer.observe('.this-will-be-on-bottom-of-page', res => {
+      this.setData({ atBottom: res.intersectionRatio > 0 });
     });
   },
   methods: {
