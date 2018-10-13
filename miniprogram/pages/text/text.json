@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "annotator": "../../components/annotator/annotator",
+    "searchBox": "../../components/search-box/search-box"
+  }
+}

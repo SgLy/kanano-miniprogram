@@ -10,7 +10,7 @@
     wx:forindex="index"
     wx:key="{{ index }}"
     data-index="{{ index }}"
-    createdTime="{{ item.createdTime }}"
+    createdTime="{{ item.shownCreatedTime }}"
     title="{{ item.title }}"
     catchtap="onCardTap"
   ></card>

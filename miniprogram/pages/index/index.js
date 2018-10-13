@@ -2,28 +2,21 @@ const app = getApp();
 const api = require('../../utils/api');
 const noop = require('../../utils/noop');
 const { formatDatetime } = require('../../utils/datetime');
-const { parse, stringify } = require('../../utils/serialization');
+const { saveData, loadData } = require('../../utils/serialization');
 const { wx, wxSync } = require('../../utils/wx_promisify');
-
-const TABS = {
-  CARD_LIST: 1,
-  TEXT: 2,
-  SETTING: 3
-};
 
 Page({
   data: {
     atTop: true,
     data: [],
-    TABS, tabs: TABS.CARD_LIST,
   },
-  onLoad: function () {
+  onLoad() {
     // set navigation bar height
     this.setData({ navigationBarHeight: app.navigationBarHeight });
 
     // read save data
-    const data = parse(wxSync.getStorageSync('data'));
-    data.forEach(d => d.createdTime = formatDatetime(d.createdTime));
+    const data = loadData();
+    data.forEach(d => d.showCreatedTime = formatDatetime(d.createdTime));
     this.setData({ data });
 
     // try to read clipboard
@@ -47,29 +40,29 @@ Page({
         else
           return Promise.reject('');
       }).then(res => {
-        this.setData({
-          tabs: TABS.TEXT,
-          parsed: res.data.res
-        });
         // save to storage
         const data = this.data.data;
         data.push({
           title: text.slice(0, 5),
           createdTime: Date.now(),
+          shownCreatedTime: formatDatetime(Date.now()),
           parsed: res.data.res
         });
-        wxSync.setStorageSync('data', stringify(data));
+        saveData(data);
+        this.viewText(this.data.data.length - 1);
       }).catch(noop);
     }
   },
-  onCardTap: function (e) {
+  onCardTap(e) {
     const index = e.currentTarget.dataset.index;
-    this.setData({
-      tabs: TABS.TEXT,
-      parsed: this.data.data[index].parsed
+    this.viewText(index);
+  },
+  viewText(id) {
+    wx.navigateTo({
+      url: `/pages/text/text?id=${id}`
     });
   },
-  onPageScroll: function (e) {
+  onPageScroll(e) {
     const atTop = !(e.scrollTop > 0);
     if (atTop !== this.data.atTop)
       this.setData({ atTop });
