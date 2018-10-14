@@ -11,9 +11,9 @@
       <open-data class="nickname" type="userNickName" />
     </view>
   </card>
-  <card showLabel label="Source">
+  <card showLabel label="来源">
     <view class="option">
-      <view class="option-label">Check clipboard</view>
+      <view class="option-label">检查剪贴板</view>
       <view class="option-spacing"></view>
       <view class="option-switcher">
         <swticher initValue="{{ data.options.clipboard }}" name="clipboard" />

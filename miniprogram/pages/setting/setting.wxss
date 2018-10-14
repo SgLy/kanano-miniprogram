@@ -20,9 +20,3 @@
 .option-spacing {
   flex: 1;
 }
-.option-label {
-  font-size: 0.8em;
-}
-.option-switch {
-  
-}

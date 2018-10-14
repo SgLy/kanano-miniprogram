@@ -1,16 +1,16 @@
 const TABS = [
   {
-    name: 'Index',
+    name: '列表',
     url: '/pages/index/index',
     showOnlyMatched: false
   },
   {
-    name: 'Text',
+    name: '标注',
     url: '/pages/text/text',
     showOnlyMatched: true
   },
   {
-    name: 'Setting',
+    name: '设置',
     url: '/pages/setting/setting',
     showOnlyMatched: false
   }
@@ -45,7 +45,7 @@ Component({
     onTabClick(e) {
       if (e.currentTarget.dataset.index === this.data.currentTab)
         return;
-      wx.navigateTo({
+      wx.redirectTo({
         url: e.currentTarget.dataset.url
       });
     }
