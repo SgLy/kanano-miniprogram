@@ -10,6 +10,7 @@
   box-shadow: 0 0 2px rgba(0,0,0,.14),
               0 -2px 4px rgba(0,0,0,.28);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #ffffff;
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -18,10 +19,17 @@
   padding: 0.5em;
   flex: 1;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.tab-bar .tab.active {
+.tab-bar .tab.checked {
   color: rgb(25, 115, 230);
+}
+.tab-icon {
+  height: 2em;
+  width: 2em;
 }
 .this-will-be-on-bottom-of-page {
   height: 1px;

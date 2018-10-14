@@ -1,15 +1,16 @@
 <view class="tab-bar">
   <view class="tabs-container {{ atBottom ? 'tabs-container-bottom' : '' }}">
     <view
-      class="tab {{ index === currentTab ? 'active' : '' }}"
       wx:for="{{ tabs }}"
       wx:forindex="index"
       wx:key="{{ index }}"
       data-url="{{ item.url }}"
       data-index="{{ index }}"
       bindtap="onTabClick"
-      wx:if="{{ !item.showOnlyMatched || index === currentTab }}"
+      class="tab {{ item.matched ? 'checked' : '' }}"
+      wx:if="{{ !item.showOnlyMatched || item.matched }}"
     >
+      <image class="tab-icon" src="{{ item.matched ? item.matchedIcon : item.icon }}" />
       <text>{{ item.name }}</text>
     </view>
   </view>
