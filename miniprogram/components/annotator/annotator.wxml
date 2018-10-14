@@ -5,7 +5,7 @@
       wx:key="{{ idx+item.upper+item.lower }}"
     >
       <text class="upper">{{ item.pronunciation }}</text>
-      <text decode class="lower">{{ item.surface_form !== ' ' ? item.surface_form : '&nbsp;' }}</text>
+      <text decode class="lower">{{ item.surface_form }}</text>
     </view>
   </view>
 </view>

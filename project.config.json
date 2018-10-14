@@ -71,13 +71,20 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "Setting",
 					"pathName": "pages/setting/setting",
+					"query": "",
 					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "Text",
+					"pathName": "pages/text/text",
+					"query": "id=0"
 				}
 			]
 		}
