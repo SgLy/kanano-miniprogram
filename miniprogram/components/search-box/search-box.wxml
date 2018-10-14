@@ -2,4 +2,8 @@
 <view
   class="container {{ atTop ? 'container-top' : '' }}"
   style="height: {{ height }}px;">
+  <view class="capsule"></view>
+  <view class="search-box">
+    <text>搜索还没做</text>
+  </view>
 </view>

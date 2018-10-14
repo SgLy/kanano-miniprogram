@@ -10,7 +10,32 @@
 .container.container-top {
   box-shadow: 0 0 1px rgba(0,0,0,.28);
 }
+.search-box {
+  background-color: rgb(240, 242, 243);
+  margin-top: 32px;
+  margin-left: 10px;
+  border-radius: 27px;
+  height: 32px;
+  width: calc(100vw - 30pt - 95px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search-box text {
+  margin-left: 1em;
+  color: #aaaaaa;
+}
 .this-will-be-on-top-of-page {
   height: 1px;
   opacity: 0;
+}
+.capsule {
+  display: none;
+  position: fixed;
+  height: 32px;
+  width: 95px;
+  right: 10px;
+  top: 32px;
+  border-radius: 27px;
+  background-color: aqua;
 }
