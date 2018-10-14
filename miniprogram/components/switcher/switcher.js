@@ -4,7 +4,7 @@ Component({
   },
   properties: {
     initValue: {
-      type: String,
+      type: Boolean,
       value: false
     },
     disabled: {
@@ -18,7 +18,7 @@ Component({
   },
   ready() {
     this.setData({
-      checked: this.data.initValue !== 'false'
+      checked: this.data.initValue
     });
   },
   methods: {
