@@ -3,7 +3,7 @@ const { p } = require('../base');
 Page(p({
   onLoad(params) {
     this.setData({
-      parsed: this.data.data[params.id].parsed
+      parsed: this.data.data.text[params.id].parsed
     });
   }
 }));

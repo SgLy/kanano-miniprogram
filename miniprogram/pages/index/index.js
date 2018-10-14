@@ -20,11 +20,20 @@ Page(p({
       wx.getClipboardData().then(res => {
         if (res.data && res.data.length > 0) {
           text = res.data;
+          let comment = '';
+
+          // netease cloud music
+          const ncmMatch = text.match(/分享歌词：\n(.+?)分享.+?/);
+          if (ncmMatch && ncmMatch.length && ncmMatch.length > 1) {
+            text = ncmMatch[1];
+            comment = '（网易云音乐歌词）';
+          }
+
           const len = text.length;
           const short = text.slice(0, 17) + (len > 17 ? '...' : '');
           return wx.showModal({
             title: '从剪贴板导入',
-            content: `共「${short}」${len}字`,
+            content: `共「${short}」${len}字${comment}`,
             cancelText: '不导入',
             confirmText: '查看'
           });
