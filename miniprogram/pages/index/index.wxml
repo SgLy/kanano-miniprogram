@@ -9,7 +9,7 @@
     catchtap="onCardTap"
   >
     <view class="title">{{ item.title }}</view>
-    <view class="content">{{ item.shownCreatedTime }}</view>
+    <view class="content">{{ item.showCreatedTime }}</view>
   </card>
 </view>
 <tabBar />

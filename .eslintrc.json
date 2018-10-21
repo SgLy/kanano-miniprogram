@@ -33,6 +33,7 @@
     "Page": true,
     "Component": true,
     "App": true,
-    "getApp": true
+    "getApp": true,
+    "console": true
   }
 }

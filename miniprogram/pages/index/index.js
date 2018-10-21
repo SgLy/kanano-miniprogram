@@ -1,7 +1,7 @@
 const api = require('../../utils/api');
 const noop = require('../../utils/noop');
 const { formatDatetime } = require('../../utils/datetime');
-const { saveData } = require('../../utils/serialization');
+const { saveData } = require('../../utils/data');
 const { wx } = require('../../utils/wx_promisify');
 const { p } = require('../base');
 
@@ -49,7 +49,7 @@ Page(p({
         data.text.push({
           title: text.slice(0, 5),
           createdTime: Date.now(),
-          shownCreatedTime: formatDatetime(Date.now()),
+          showCreatedTime: formatDatetime(Date.now()),
           parsed: res.data.res
         });
         saveData(data);

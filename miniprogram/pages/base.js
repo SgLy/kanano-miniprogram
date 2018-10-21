@@ -1,6 +1,6 @@
 const app = getApp();
 const { formatDatetime } = require('../utils/datetime');
-const { loadData } = require('../utils/serialization');
+const { loadData } = require('../utils/data');
 
 function wrapFunction(options, name, func) {
   const origin = options[name] || (function () {});
@@ -20,6 +20,7 @@ function wrapPageOption(options) {
     data.text = data.text || [];
     data.options = data.options || {};
     data.text.forEach(d => d.showCreatedTime = formatDatetime(d.createdTime));
+    console.log('Data: ', data);
 
     this.setData({
       data,

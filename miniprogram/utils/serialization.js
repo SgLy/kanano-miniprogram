@@ -1,5 +1,3 @@
-const { wxSync } = require('./wx_promisify');
-
 const {
   compressToEncodedURIComponent,
   decompressFromEncodedURIComponent
@@ -17,17 +15,7 @@ function parse(compressed) {
   return JSON.parse(str);
 }
 
-function saveData(data) {
-  wxSync.setStorageSync('data', stringify(data));
-}
-
-function loadData() {
-  return parse(wxSync.getStorageSync('data'));
-}
-
 module.exports = {
   stringify,
-  parse,
-  loadData,
-  saveData
+  parse
 };

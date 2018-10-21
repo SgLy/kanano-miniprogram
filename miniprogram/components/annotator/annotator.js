@@ -4,19 +4,20 @@ Component({
   properties: {
     parsedText: {
       type: Array,
-      value: []
+      value: [],
+      observer(parsed) {
+        parsed.forEach(paragraph => {
+          paragraph.forEach(word => {
+            if (isEmpty(word.surface_form))
+              word.surface_form = '&nbsp;';
+          });
+        });
+        this.setData({ parsed });
+      }
     },
     vertical: {
       type: Boolean,
       value: false
     }
-  },
-  ready() {
-    const parsed = this.data.parsedText;
-    parsed.forEach(p => {
-      if (isEmpty(p.surface_form))
-        p.surface_form = '&nbsp;';
-    });
-    this.setData({ parsedText: parsed });
   }
 });

@@ -1,33 +1,40 @@
 .annotator {
   font-size: 1em;
 }
-/* normal (horizontal case) */
 .annotator > .container {
+  padding: 1em;
+}
+/* normal (horizontal case) */
+.annotator > .container > .paragraph {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1em;
+  padding-bottom: 5px;
 }
-.annotator > .container > .word {
+.annotator > .container > .paragraph::after {
+  content: "";
+  flex: 1;
+}
+.annotator > .container > .paragraph > .word {
   display: inline-flex;
   text-align: center;
   flex-direction: column;
 }
-.annotator > .container > .word > .upper::before {
+.annotator > .container > .paragraph > .word > .upper::before {
   /* use zero width char to give empty upper a height */
-  content: '\200b';
+  content: "\200b";
 }
-.annotator > .container > .word > .upper {
+.annotator > .container > .paragraph > .word > .upper {
   font-size: 0.8em;
   color: #888;
 }
-.annotator > .container > .word > .lower {
+.annotator > .container > .paragraph > .word > .base {
   font-size: 1em;
   display: inline;
 }
 
 /* vertical case */
-.annotator.vertical > .container {
+.annotator.vertical > .paragraph {
   writing-mode: vertical-rl;
 }

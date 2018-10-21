@@ -1,5 +1,5 @@
 const { p } = require('../base');
-const { saveData } = require('../../utils/serialization');
+const { saveData } = require('../../utils/data');
 
 Page(p({
   onValueChanged(e) {
