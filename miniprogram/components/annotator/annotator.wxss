@@ -20,6 +20,7 @@
   display: inline-flex;
   text-align: center;
   flex-direction: column;
+  margin-right: 2px;
 }
 .annotator > .container > .paragraph > .word > .upper::before {
   /* use zero width char to give empty upper a height */
@@ -32,6 +33,10 @@
 .annotator > .container > .paragraph > .word > .base {
   font-size: 1em;
   display: inline;
+}
+.annotator > .container > .paragraph > .word > .lower {
+  font-size: 0.6em;
+  color: #888;
 }
 
 /* vertical case */

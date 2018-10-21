@@ -10,6 +10,8 @@ Component({
           paragraph.forEach(word => {
             if (isEmpty(word.surface_form))
               word.surface_form = '&nbsp;';
+            if (word.POS.main === '記号')
+              word.POS.main = '';
           });
         });
         this.setData({ parsed });
