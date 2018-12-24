@@ -14,7 +14,7 @@
       >
         <text class="upper">{{ word.pronunciation }}</text>
         <text decode class="base">{{ word.surface_form }}</text>
-        <text class="lower">{{ word.POS.main }}</text>
+        <!-- <text class="lower">{{ word.POS.main }}</text> -->
       </view>
     </view>
   </view>
