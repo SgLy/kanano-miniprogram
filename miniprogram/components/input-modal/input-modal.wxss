@@ -1,0 +1,73 @@
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  background-color: black;
+  transition: opacity 0.2s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.mask.active {
+  opacity: 0.2;
+  z-index: 2;
+  pointer-events: all;
+}
+
+.container {
+  background-color: white;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  position: fixed;
+  left: 75rpx;
+  width: 600rpx;
+  top: 200rpx;
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.container.active {
+  opacity: 1;
+  z-index: 3;
+  pointer-events: all;
+}
+
+.label {
+  font-weight: bold;
+  margin: 1em;
+}
+
+input {
+  border: 1rpx solid #dddddd;
+  border-radius: 6px;
+  padding: 3px;
+  padding-left: 1ex;
+  margin: 1em;
+  margin-top: 1.5em;
+}
+
+.buttons {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.button {
+  flex: 1;
+  padding-bottom: 0.75em;
+  padding-top: 0.75em;
+  margin-left: -1rpx;
+  border: 1rpx solid #eeeeee;
+  text-align: center;
+}
+
+.confirm {
+  color: rgb(25, 115, 230);
+}

@@ -33,7 +33,8 @@ Page(p({
         title: '从剪贴板导入',
         content: `共「${short}」${len}字${comment}`,
         cancelText: '不导入',
-        confirmText: '导入'
+        confirmText: '导入',
+        confirmColor: '#1973e6',
       });
     }).then(res => {
       if (res.confirm === true && text.length > 0)

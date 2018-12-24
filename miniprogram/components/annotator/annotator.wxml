@@ -1,6 +1,14 @@
 <view class="annotator {{ vertical ? 'vertical' : '' }}">
   <view class="container">
-    <view class="title">{{ title }}</view>
+    <view class="title" bindtap="showTitleModal">{{ title }}</view>
+    <inputModal 
+      initValue="{{ title }}"
+      placeholder="标题"
+      label="更改标题"
+      active="{{ titleModalActive }}"
+      bindSubmit="changeTitle"
+      onHide="hideTitleModal"
+    />
     <view class="paragraph"
       wx:for="{{ parsed }}"
       wx:for-index="index"

@@ -27,7 +27,7 @@
 }
 .title {
   position: absolute;
-  bottom: 0.5em;
+  bottom: 12px;
   left: 1em;
 }
 .this-will-be-on-top-of-page {

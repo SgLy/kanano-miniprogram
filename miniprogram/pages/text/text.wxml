@@ -3,6 +3,7 @@
   <annotator
     parsedText="{{ parsed }}"
     title="{{ title }}"
+    bindTitleChange="onTitleChanged"
   />
 </view>
 <tabBar />

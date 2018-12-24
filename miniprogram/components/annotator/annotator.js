@@ -25,5 +25,17 @@ Component({
       type: Boolean,
       value: false
     }
+  },
+  methods: {
+    showTitleModal() {
+      this.setData({ titleModalActive: true });
+    },
+    hideTitleModal() {
+      this.setData({ titleModalActive: false });
+    },
+    changeTitle(e) {
+      this.setData({ title: e.detail });
+      this.triggerEvent('TitleChange', e.detail);
+    }
   }
 });
