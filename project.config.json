@@ -49,7 +49,7 @@
 		"nodeModules": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.0",
+	"libVersion": "2.3.1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

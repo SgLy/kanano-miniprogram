@@ -5,6 +5,7 @@
     "pages/setting/setting"
   ],
   "window":{
-    "navigationStyle": "custom"
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
   }
 }
