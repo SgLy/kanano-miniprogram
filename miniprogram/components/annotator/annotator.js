@@ -17,6 +17,10 @@ Component({
         this.setData({ parsed });
       }
     },
+    title: {
+      type: String,
+      value: ''
+    },
     vertical: {
       type: Boolean,
       value: false

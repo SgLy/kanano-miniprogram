@@ -1,5 +1,6 @@
 <view class="annotator {{ vertical ? 'vertical' : '' }}">
   <view class="container">
+    <view class="title">{{ title }}</view>
     <view class="paragraph"
       wx:for="{{ parsed }}"
       wx:for-index="index"

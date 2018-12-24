@@ -1,4 +1,4 @@
-<!-- <searchBox /> -->
+<searchBox />
 <view
   style="padding-top: {{ navigationBarHeight }}px; padding-bottom: 2em;"
   catchValueChanged="onValueChanged"

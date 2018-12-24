@@ -4,6 +4,10 @@
 .annotator > .container {
   padding: 1em;
 }
+.annotator > .container > .title {
+  font-weight: bold;
+  padding-bottom: 1em;
+}
 /* normal (horizontal case) */
 .annotator > .container > .paragraph {
   display: flex;

@@ -8,7 +8,8 @@ Page(p({
     const id = (params && params.id) || lastOpenedTextId;
 
     this.setData({
-      parsed: this.data.data.text[id].parsed
+      parsed: this.data.data.text[id].parsed,
+      title: this.data.data.text[id].title,
     });
 
     lastOpenedTextId = id;

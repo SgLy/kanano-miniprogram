@@ -25,6 +25,11 @@
   margin-left: 1em;
   color: #aaaaaa;
 }
+.title {
+  position: absolute;
+  bottom: 0.5em;
+  left: 1em;
+}
 .this-will-be-on-top-of-page {
   height: 1px;
   opacity: 0;
