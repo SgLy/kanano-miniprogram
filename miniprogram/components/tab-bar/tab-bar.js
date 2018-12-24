@@ -3,27 +3,29 @@ const TABS = [
   {
     name: '列表',
     url: '/pages/index/index',
-    showOnlyMatched: false,
+    visible: true,
     icon: `${PREFIX}/list.svg`,
     matchedIcon: `${PREFIX}/list-matched.svg`
   },
   {
     name: '标注',
     url: '/pages/text/text',
-    showOnlyMatched: true,
+    visible: false,
     icon: `${PREFIX}/text.svg`,
     matchedIcon: `${PREFIX}/text-matched.svg`
   },
   {
     name: '设置',
     url: '/pages/setting/setting',
-    showOnlyMatched: false,
+    visible: true,
     icon: `${PREFIX}/setting.svg`,
     matchedIcon: `${PREFIX}/setting-matched.svg`
   }
 ];
 
 const currentRoute = require('../../utils/current-route');
+
+let showTab;
 
 Component({
   data: {
@@ -41,6 +43,14 @@ Component({
       tabs: TABS,
       currentTab: matched
     });
+
+    showTab = id => {
+      TABS[id].visible = true;
+      this.setData({
+        [`tabs[${id}].visible`]: true
+      });
+      return true;
+    };
   },
   ready() {
     // observer to switch box-shadow
@@ -62,3 +72,9 @@ Component({
     }
   }
 });
+
+module.exports = {
+  showTab(id) {
+    return showTab(id);
+  }
+};

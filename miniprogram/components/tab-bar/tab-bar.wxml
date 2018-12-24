@@ -8,7 +8,7 @@
       data-index="{{ index }}"
       bindtap="onTabClick"
       class="tab {{ item.matched ? 'checked' : '' }}"
-      wx:if="{{ !item.showOnlyMatched || item.matched }}"
+      wx:if="{{ item.visible }}"
     >
       <image class="tab-icon" src="{{ item.matched ? item.matchedIcon : item.icon }}" />
       <text>{{ item.name }}</text>
