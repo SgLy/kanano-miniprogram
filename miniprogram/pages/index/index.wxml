@@ -1,4 +1,4 @@
-<searchBox />
+<!-- <searchBox /> -->
 <view style="padding-top: {{ navigationBarHeight }}px; padding-bottom: 2em;" >
   <!-- <sortableList /> -->
   <card
@@ -11,5 +11,8 @@
     <view class="title">{{ item.title }}</view>
     <view class="content">{{ item.showCreatedTime }}</view>
   </card>
+</view>
+<view class="float_button" bindtap="onAdd">
+  <image class="tab-icon" src="../../assets/images/tab-icons/plus.svg" />
 </view>
 <tabBar />

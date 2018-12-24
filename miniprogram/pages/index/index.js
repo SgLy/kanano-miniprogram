@@ -9,53 +9,49 @@ Page(p({
   data: {
     data: {},
   },
-  onLoad() {
-    // try to read clipboard
-    if (this.data.data.options.clipboard)
-      this.getClipboard();
-  },
-  getClipboard() {
-    if (wx.getClipboardData !== undefined) {
-      let text;
-      wx.getClipboardData().then(res => {
-        if (res.data && res.data.length > 0) {
-          text = res.data;
-          let comment = '';
-
-          // netease cloud music
-          const ncmMatch = text.match(/分享歌词：\n(.+?)分享.+?/);
-          if (ncmMatch && ncmMatch.length && ncmMatch.length > 1) {
-            text = ncmMatch[1];
-            comment = '（网易云音乐歌词）';
-          }
-
-          const len = text.length;
-          const short = text.slice(0, 17) + (len > 17 ? '...' : '');
-          return wx.showModal({
-            title: '从剪贴板导入',
-            content: `共「${short}」${len}字${comment}`,
-            cancelText: '不导入',
-            confirmText: '查看'
-          });
-        }
-      }).then(res => {
-        if (res.confirm === true)
-          return api.parse(text);
-        else
-          return Promise.reject('');
-      }).then(res => {
-        // save to storage
-        const data = this.data.data;
-        data.text.push({
-          title: text.slice(0, 5),
-          createdTime: Date.now(),
-          showCreatedTime: formatDatetime(Date.now()),
-          parsed: res.data.res
+  onAdd() {
+    let text = '';
+    wx.getClipboardData().then(res => {
+      if (!res.data || res.data.length === 0) {
+        return wx.showModal({
+          content: '剪贴板中没有内容'
         });
-        saveData(data);
-        this.viewText(this.data.data.text.length - 1);
-      }).catch(noop);
-    }
+      }
+      text = res.data;
+      let comment = '';
+
+      // netease cloud music
+      const ncmMatch = text.match(/分享歌词：\n(.+?)分享.+?/);
+      if (ncmMatch && ncmMatch.length && ncmMatch.length > 1) {
+        text = ncmMatch[1];
+        comment = '（网易云音乐歌词）';
+      }
+
+      const len = text.length;
+      const short = text.slice(0, 17) + (len > 17 ? '...' : '');
+      return wx.showModal({
+        title: '从剪贴板导入',
+        content: `共「${short}」${len}字${comment}`,
+        cancelText: '不导入',
+        confirmText: '导入'
+      });
+    }).then(res => {
+      if (res.confirm === true && text.length > 0)
+        return api.parse(text);
+      else
+        return Promise.reject('');
+    }).then(res => {
+      // save to storage
+      const data = this.data.data;
+      data.text.push({
+        title: text.slice(0, 5),
+        createdTime: Date.now(),
+        showCreatedTime: formatDatetime(Date.now()),
+        parsed: res.data.res
+      });
+      saveData(data);
+      this.viewText(this.data.data.text.length - 1);
+    }).catch(noop);
   },
   onCardTap(e) {
     const index = e.currentTarget.dataset.index;

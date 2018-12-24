@@ -1,4 +1,4 @@
-<searchBox />
+<!-- <searchBox /> -->
 <view
   style="padding-top: {{ navigationBarHeight }}px; padding-bottom: 2em;"
   catchValueChanged="onValueChanged"
@@ -11,7 +11,7 @@
       <open-data class="nickname" type="userNickName" />
     </view>
   </card>
-  <card showLabel label="来源">
+  <!--<card showLabel label="来源">
     <view class="option">
       <view class="option-label">检查剪贴板</view>
       <view class="option-spacing"></view>
@@ -19,6 +19,6 @@
         <swticher initValue="{{ data.options.clipboard }}" name="clipboard" />
       </view>
     </view>
-  </card>
+  </card>-->
 </view>
 <tabBar />
