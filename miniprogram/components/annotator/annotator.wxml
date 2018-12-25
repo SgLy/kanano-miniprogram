@@ -25,8 +25,7 @@
 </view>
 <popup
   active="{{ wordDetailActive }}"
-  left="{{ wordDetailLeft }}"
-  top="{{ wordDetailTop }}"
+  top="200rpx"
 >
   <view class="detail_table">
     <view

@@ -62,8 +62,6 @@ Component({
       ].filter(row => !!row[1]);
       this.setData({
         wordDetailActive: true,
-        wordDetailLeft: e.detail.x,
-        wordDetailTop: e.detail.y,
         wordDetail: transpose(wordDetail),
       });
     },

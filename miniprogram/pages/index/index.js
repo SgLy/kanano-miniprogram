@@ -62,5 +62,18 @@ Page(p({
     wx.navigateTo({
       url: `/pages/text/text?id=${id}`
     });
+  },
+  showPopupMenu(e) {
+    this.indexToDelete = e.currentTarget.dataset.index;
+    this.setData({
+      popupMenuActive: true,
+    });
+  },
+  onDelete() {
+    this.setData({ popupMenuActive: false });
+    const data = this.data.data;
+    data.text.splice(this.indexToDelete, 1);
+    saveData(data);
+    this.setData({ data });
   }
 }));

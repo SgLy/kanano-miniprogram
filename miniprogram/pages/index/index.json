@@ -4,6 +4,7 @@
     "searchBox": "../../components/search-box/search-box",
     "card": "../../components/card/card",
     "tabBar": "../../components/tab-bar/tab-bar",
-    "sortableList": "../../components/sortable-list/sortable-list"
+    "sortableList": "../../components/sortable-list/sortable-list",
+    "popup": "../../components/popup/popup"
   }
 }

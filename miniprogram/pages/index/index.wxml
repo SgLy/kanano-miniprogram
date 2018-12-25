@@ -7,6 +7,7 @@
     wx:key="{{ index }}"
     data-index="{{ index }}"
     catchtap="onCardTap"
+    catchlongpress="showPopupMenu"
   >
     <view class="title">{{ item.title }}</view>
     <view class="content">{{ item.showCreatedTime }}</view>
@@ -15,4 +16,14 @@
 <view class="float_button" bindtap="onAdd">
   <image class="tab-icon" src="../../assets/images/tab-icons/plus.svg" />
 </view>
+<popup
+  active="{{ popupMenuActive }}"
+  top="calc(50vh - 1em)"
+>
+  <view class="popup_menu">
+    <view class="popup_menu_item" bindtap="onDelete">
+      删除
+    </view>
+  </view>
+</popup>
 <tabBar />

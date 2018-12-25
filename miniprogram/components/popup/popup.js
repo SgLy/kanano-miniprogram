@@ -6,14 +6,9 @@ Component({
       type: Boolean,
       value: false,
     },
-    left: {
-      type: Number,
-      value: 0,
-      observer(left) { this.setData({ left }); }
-    },
     top: {
-      type: Number,
-      value: 0,
+      type: String,
+      value: '100rpx',
       observer(top) { this.setData({ top }); }
     },
   },

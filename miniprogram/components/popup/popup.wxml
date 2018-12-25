@@ -5,6 +5,7 @@
 <view
   class="container {{ active ? 'active' : '' }}"
   catchtouchmove="noop"
+  style="top: {{ top }};"
 >
   <slot></slot>
 </view>
