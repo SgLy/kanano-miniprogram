@@ -7,13 +7,12 @@
   opacity: 0;
   background-color: black;
   transition: opacity 0.2s ease;
-  z-index: -1;
+  z-index: 2;
   pointer-events: none;
 }
 
 .mask.active {
   opacity: 0.2;
-  z-index: 2;
   pointer-events: all;
 }
 
@@ -28,13 +27,12 @@
   border-radius: 8px;
   box-sizing: border-box;
   overflow: hidden;
-  z-index: -1;
+  z-index: 3;
   pointer-events: none;
 }
 
 .container.active {
   opacity: 1;
-  z-index: 3;
   pointer-events: all;
 }
 
