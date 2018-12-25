@@ -47,3 +47,30 @@
 .annotator.vertical > .paragraph {
   writing-mode: vertical-rl;
 }
+
+.detail_table {
+  margin-top: 0.5em;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 0.5em 1em;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),
+              0 4px 8px rgba(0,0,0,.28);
+  border: 1rpx solid #eeeeee;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.detail_column {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0.5em;
+}
+
+.detail_column.title {
+  font-weight: bold;
+}
+
+.detail_cell {
+  display: inline;
+  padding: 0.5em;
+}

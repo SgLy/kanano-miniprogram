@@ -1,0 +1,10 @@
+<view class="mask {{ active ? 'active' : '' }}"
+  catchtap="onHide"
+  catchtouchmove="noop"
+/>
+<view
+  class="container {{ active ? 'active' : '' }}"
+  catchtouchmove="noop"
+>
+  <slot></slot>
+</view>

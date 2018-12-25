@@ -1,25 +1,20 @@
 <view class="annotator {{ vertical ? 'vertical' : '' }}">
   <view class="container">
     <view class="title" bindtap="showTitleModal">{{ title }}</view>
-    <inputModal 
-      initValue="{{ title }}"
-      placeholder="标题"
-      label="更改标题"
-      active="{{ titleModalActive }}"
-      bindSubmit="changeTitle"
-      onHide="hideTitleModal"
-    />
     <view class="paragraph"
       wx:for="{{ parsed }}"
-      wx:for-index="index"
+      wx:for-index="pid"
       wx:for-item="paragraph"
-      wx:key="{{ index }}"
+      wx:key="{{ pid }}"
     >
       <view class="word"
         wx:for="{{ paragraph }}"
-        wx:for-index="index"
+        wx:for-index="wid"
         wx:for-item="word"
-        wx:key="{{ w + index }}"
+        wx:key="{{ w + wid }}"
+        data-pid="{{ pid }}"
+        data-wid="{{ wid }}"
+        bindtap="showWordDetail"
       >
         <text class="upper">{{ word.pronunciation }}</text>
         <text decode class="base">{{ word.surface_form }}</text>
@@ -28,3 +23,34 @@
     </view>
   </view>
 </view>
+<popup
+  active="{{ wordDetailActive }}"
+  left="{{ wordDetailLeft }}"
+  top="{{ wordDetailTop }}"
+>
+  <view class="detail_table">
+    <view
+      class="detail_column {{ index === 0 ? 'title' : 'content' }}"
+      wx:for="{{ wordDetail }}"
+      wx:for-index="index"
+      wx:key="{{ index }}"
+      wx:for-item="column"
+    >
+      <view
+        class="detail_cell"
+        wx:for="{{ column }}"
+        wx:for-item="cell"
+        wx:for-index="index"
+        wx:key="{{ index }}"
+      >{{ cell }}</view>
+    </view>
+  </view>
+</popup>
+<inputModal 
+  initValue="{{ title }}"
+  placeholder="标题"
+  label="更改标题"
+  active="{{ titleModalActive }}"
+  bindSubmit="changeTitle"
+  onHide="hideTitleModal"
+/>

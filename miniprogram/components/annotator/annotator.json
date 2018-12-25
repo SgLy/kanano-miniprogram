@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "inputModal": "../input-modal/input-modal"
+    "inputModal": "../input-modal/input-modal",
+    "popup": "../popup/popup"
   }
 }
