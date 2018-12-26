@@ -1,7 +1,11 @@
 <searchBox />
 <view style="padding-top: {{ navigationBarHeight }}px; padding-bottom: 2em;" >
-  <!-- <sortableList /> -->
+  <view
+    wx:if="{{ data.text.length === 0 }}"
+    class="no_content"
+  >复制内容后点击右下角加号添加</view>
   <card
+    wx:if="{{ data.text.length > 0 }}"
     wx:for="{{ data.text }}"
     wx:forindex="index"
     wx:key="{{ index }}"

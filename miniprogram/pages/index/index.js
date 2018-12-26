@@ -14,7 +14,8 @@ Page(p({
     wx.getClipboardData().then(res => {
       if (!res.data || res.data.length === 0) {
         return wx.showModal({
-          content: '剪贴板中没有内容'
+          content: '剪贴板中没有内容',
+          confirmColor: '#1973e6',
         });
       }
       text = res.data;

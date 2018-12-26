@@ -4,6 +4,12 @@ card .content {
   color: #222222;
 }
 
+.no_content {
+  line-height: 80vh;
+  text-align: center;
+  color: #cccccc;
+}
+
 .float_button {
   height: 3em;
   width: 3em;
