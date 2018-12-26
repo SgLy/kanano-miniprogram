@@ -1,6 +1,9 @@
 const { wxSync } = require('./wx_promisify');
 const { parse, stringify } = require('./serialization');
 
+let rawSize = 0;
+const getRawSize = () => rawSize;
+
 // polyfill
 (() => {
   const m = new Map();
@@ -18,11 +21,13 @@ function saveData(data) {
 function loadData() {
   const raw = wxSync.getStorageSync('data');
   console.log('Data size:', raw.length);
+  rawSize = raw.length;
   const parsed = parse(raw);
   return parsed;
 }
 
 module.exports = {
   loadData,
-  saveData
+  saveData,
+  getRawSize
 };

@@ -20,5 +20,12 @@
       </view>
     </view>
   </card>-->
+  <card showLabel label="存储">
+    <view class="option">
+      <view class="option-label">已用空间</view>
+      <view class="option-spacing"></view>
+      <view class="option-switcher">{{ rawSize }}</view>
+    </view>
+  </card>
 </view>
 <tabBar />
